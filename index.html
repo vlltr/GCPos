@@ -46,7 +46,8 @@
           </div>
           <!-- End Categories -->
           <!-- Products -->
-          <div class="grid grid-cols-4 gap-5 px-5 mt-5 overflow-y-auto h-4/5"
+          <div
+            class="grid grid-cols-4 gap-5 px-5 mt-5 overflow-y-auto h-4/5"
             x-data="{ products: [
           {id: 1, title: 'Menú Campestre', price: 6.20, img: 'https://www.pollocampestre.com/wp-content/uploads/2020/12/Menu-campestre-1-550x550.jpg'},
           {id: 2, title: 'Full Campestre', price: 8.75, img: 'https://www.pollocampestre.com/wp-content/uploads/2020/12/full-campestre-550x550.jpg'},
@@ -65,26 +66,25 @@
           {id: 4, title: 'Súper Campestre', price: 8.25, img: 'https://www.pollocampestre.com/wp-content/uploads/2020/12/super-campestre-550x550.jpg'},
           ] }"
           >
-            
-              <template x-for="(product, index) in products">
-                <div
-                  class="px-1 py-1 flex flex-col border border-gray-300 hover:bg-gray-300 rounded-lg h-36 items-center justify-center hover:shadow-lg"
-                >
-                  <img
-                    class="h-20 w-20 object-cover rounded-full"
-                    :src="product.img"
-                    alt="Menú"
-                  />
-                  <span
-                    class="font-bold text-sm text-stone-900"
-                    x-text="'$' + product.price"
-                  ></span>
-                  <h1
-                    class="font-bold text-gray-800 text-md"
-                    x-text="product.title"
-                  ></h1>
-                </div>
-              </template>
+            <template x-for="(product, index) in products">
+              <div
+                class="px-1 py-1 flex flex-col border border-gray-300 hover:bg-gray-300 rounded-lg h-36 items-center justify-center hover:shadow-lg"
+              >
+                <img
+                  class="h-20 w-20 object-cover rounded-full"
+                  :src="product.img"
+                  alt="Menú"
+                />
+                <span
+                  class="font-bold text-sm text-stone-900"
+                  x-text="'$' + product.price"
+                ></span>
+                <h1
+                  class="font-bold text-gray-800 text-md"
+                  x-text="product.title"
+                ></h1>
+              </div>
+            </template>
           </div>
           <!-- End Products -->
         </div>
@@ -94,32 +94,62 @@
           <div class="flex flex-row items-center justify-between px-5 mt-5">
             <div class="font-bold text-xl">Orden</div>
             <div class="font-semibold">
-              <button class="px-4 py-2 rounded-md bg-red-100 text-red-500">Borrar Todo</button>
+              <button class="px-4 py-2 rounded-md bg-red-100 text-red-500">
+                Borrar Todo
+              </button>
             </div>
           </div>
           <!-- End Header -->
           <!-- Order List -->
-          <div class="px-5 py-4 mt-5 overflow-y-auto h-64">
+          <div class="px-5 py-4 mt-5 overflow-y-auto h-96">
             <div class="flex flex-row justify-between items-center mb-4">
-                <div class="flex flex-row items-center w-2/5">
-                  <img src="https://www.pollocampestre.com/wp-content/uploads/2020/12/Menu-campestre-1-550x550.jpg" class="w-10 h-10 object-cover rounded-md" alt="">
-                  <span class="ml-4 font-semibold text-sm">Menú Campestre</span>
-                </div>
-                <div class="w-32 flex justify-between">
-                  <button class="px-3 py-1 rounded-md bg-gray-300 ">-</button>
-                  <span class="font-semibold mx-4">1</span>
-                  <button class="px-3 py-1 rounded-md bg-gray-300 ">+</button>
-                </div>
-                <div class="font-semibold text-lg w-16 text-center">
-                  $6.20
-                </div>
-                <button class="bg-red-100 text-red-500 py-2 px-2 rounded inline-flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                      </svg>
-                  </button>
-              </div>  
+              <div class="flex flex-row items-center w-2/5">
+                <img
+                  src="https://www.pollocampestre.com/wp-content/uploads/2020/12/Menu-campestre-1-550x550.jpg"
+                  class="w-10 h-10 object-cover rounded-md"
+                  alt=""
+                />
+                <span class="ml-4 font-semibold text-sm">Menú Campestre</span>
+              </div>
+              <div class="w-32 flex justify-between">
+                <button class="px-3 py-1 rounded-md bg-gray-300">-</button>
+                <span class="font-semibold mx-4">1</span>
+                <button class="px-3 py-1 rounded-md bg-gray-300">+</button>
+              </div>
+              <div class="font-semibold text-lg w-16 text-center">$6.20</div>
+              <button
+                class="bg-red-100 text-red-500 py-2 px-2 rounded inline-flex items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
+
+          <!-- totalItems -->
+          <div class="px-5 mt-5">
+            <div class="py-4 rounded-md shadow-lg">
+
+
+              <div
+                class="border-t-2 mt-3 py-2 px-4 flex items-center justify-between"
+              >
+                <span class="font-semibold text-2xl">Total</span>
+                <span class="font-bold text-2xl">$6.20</span>
+              </div>
+            </div>
+          </div>
+          <!-- end total -->
         </div>
       </div>
     </div>
